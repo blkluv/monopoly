@@ -2,51 +2,46 @@ function Game() {
 	var die1;
 	var die2;
 	var areDiceRolled = false;
-
+  
 	var auctionQueue = [];
 	var highestbidder;
 	var highestbid;
 	var currentbidder = 1;
 	var auctionproperty;
-
+  
 	this.rollDice = function() {
-		die1 = Math.floor(Math.random() * 6) + 1;
-		die2 = Math.floor(Math.random() * 6) + 1;
-		areDiceRolled = true;
+	  die1 = Math.floor(Math.random() * 6) + 1;
+	  die2 = Math.floor(Math.random() * 6) + 1;
+	  areDiceRolled = true;
 	};
-
+  
 	this.resetDice = function() {
-		areDiceRolled = false;
+	  areDiceRolled = false;
 	};
-
-	this.next = function() {
-		if (!p.human && p.money < 0) {
-			p.AI.payDebt();
-
-			if (p.money < 0) {
-				popup("<p>" + p.name + " is bankrupt. All of its assets will be turned over to " + player[p.creditor].name + ".</p>", game.bankruptcy);
-			} else {
-				roll();
-			}
-		} else if (areDiceRolled && doublecount === 0) {
-			play();
+  
+	this.next = function(p) {
+	  if (!p.human && p.money < 0) {
+		p.AI.payDebt();
+  
+		if (p.money < 0) {
+		  popup(`<p>${p.name} is bankrupt. All of its assets will be turned over to ${player[p.creditor].name}.</p>`, game.bankruptcy);
 		} else {
-			roll();
+		  roll();
 		}
+	  } else if (areDiceRolled && doublecount === 0) {
+		play();
+	  } else {
+		roll();
+	  }
 	};
-
+  
 	this.getDie = function(die) {
-		if (die === 1) {
-
-			return die1;
-		} else {
-
-			return die2;
-		}
-
+	  if (die === 1) {
+		return die1;
+	  } else {
+		return die2;
+	  }
 	};
-
-
 
 	// Auction functions:
 
