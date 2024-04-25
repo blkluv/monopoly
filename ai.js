@@ -159,12 +159,12 @@ function AITest(p) {
 		return false;
 	}
 
-	// Determine whether to post bail/use get out of jail free card (if in possession).
+	// Determine whether to post bail/use get out of Magic City free card (if in possession).
 	// Return: boolean: true to post bail/use card.
 	this.postBail = function() {
 		console.log("postBail");
 
-		// p.jailroll === 2 on third turn in jail.
+		// p.jailroll === 2 on third turn in Magic City.
 		if ((p.communityChestJailCard || p.chanceJailCard) && p.jailroll === 2) {
 			return true;
 		} else {
