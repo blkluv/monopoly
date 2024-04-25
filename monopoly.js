@@ -1706,7 +1706,7 @@ function updateOption() {
 function chanceCommunityChest() {
 	var p = player[turn];
 
-	// Tribe Chest
+	// Mining Pool
 	if (p.position === 2 || p.position === 17 || p.position === 33) {
 		var communityChestIndex = communityChestCards.deck[communityChestCards.index];
 
@@ -1715,7 +1715,7 @@ function chanceCommunityChest() {
 			communityChestCards.deck.splice(communityChestCards.index, 1);
 		}
 
-		popup("<img src='images/community_chest_icon.png' style='height: 50px; width: 53px; float: left; margin: 8px 8px 8px 0px;' /><div style='font-weight: bold; font-size: 16px; '>Tribe Chest:</div><div style='text-align: justify;'>" + communityChestCards[communityChestIndex].text + "</div>", function() {
+		popup("<img src='images/community_chest_icon.png' style='height: 50px; width: 53px; float: left; margin: 8px 8px 8px 0px;' /><div style='font-weight: bold; font-size: 16px; '>Mining Pool:</div><div style='text-align: justify;'>" + communityChestCards[communityChestIndex].text + "</div>", function() {
 			communityChestAction(communityChestIndex);
 		});
 
@@ -1945,9 +1945,9 @@ function streetrepairs(houseprice, hotelprice) {
 	if (cost > 0) {
 		p.pay(cost, 0);
 
-		// If function was called by Tribe Chest.
+		// If function was called by Mining Pool.
 		if (houseprice === 40) {
-			addAlert(p.name + " lost $" + cost + " to Tribe Chest.");
+			addAlert(p.name + " lost $" + cost + " to Mining Pool.");
 		} else {
 			addAlert(p.name + " lost $" + cost + " to Chance.");
 		}
@@ -1991,7 +1991,7 @@ function useJailCard() {
 	if (p.communityChestJailCard) {
 		p.communityChestJailCard = false;
 
-		// Insert the get out of Magic City free card back into the Tribe Chest deck.
+		// Insert the get out of Magic City free card back into the Mining Pool deck.
 		communityChestCards.deck.splice(communityChestCards.index, 0, 0);
 
 		communityChestCards.index++;
@@ -2751,7 +2751,7 @@ window.onload = function() {
 		communityChestCards.deck[i] = i;
 	}
 
-	// Shuffle Chance and Tribe Chest decks.
+	// Shuffle Chance and Mining Pool decks.
 	chanceCards.deck.sort(function() {return Math.random() - 0.5;});
 	communityChestCards.deck.sort(function() {return Math.random() - 0.5;});
 

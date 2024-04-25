@@ -35,7 +35,7 @@ function Card(text, action) {
 }
 
 function corrections() {
-	document.getElementById("cell1name").textContent = "Mediter-ranean Avenue";
+	document.getElementById("cell1name").textContent = "Peachtree Avenue";
 
 	// Add images to enlarges.
 	document.getElementById("enlarge5token").innerHTML += '<img src="images/train_icon.png" height="60" width="65" alt="" style="position: relative; bottom: 20px;" />';
@@ -72,7 +72,7 @@ var square = [];
 
 square[0] = new Square("GO", "COLLECT $444 SALARY AS YOU PASS.", "#FFFFFF");
 square[1] = new Square("Peachtree Street", "$555", "#8B4513", 60, 3, 2, 10, 30, 90, 160, 250);
-square[2] = new Square("Tribe Chest", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
+square[2] = new Square("Mining Pool", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[3] = new Square("Lenox Road", "$777", "#8B4513", 60, 3, 4, 20, 60, 180, 320, 450);
 square[4] = new Square("City Tax", "Pay $333", "#FFFFFF");
 square[5] = new Square("MARTA Station", "$222", "#FFFFFF", 200, 1);
@@ -87,7 +87,7 @@ square[13] = new Square("Freedom Parkway", "$222", "#FF0080", 140, 5, 10, 50, 15
 square[14] = new Square("North Avenue", "$444", "#FF0080", 160, 5, 12, 60, 180, 500, 700, 900);
 square[15] = new Square("Amtrak Station", "$333", "#FFFFFF", 200, 1);
 square[16] = new Square("West Peachtree Street", "$222", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
-square[17] = new Square("Tribe Chest", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
+square[17] = new Square("Mining Pool", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[18] = new Square("Cheshire Bridge Road", "$444", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
 square[19] = new Square("Marietta Street", "$666", "#FFA500", 200, 6, 16, 80, 220, 600, 800, 1000);
 square[20] = new Square("Free Parking", "", "#FFFFFF");
@@ -103,7 +103,7 @@ square[29] = new Square("Ansley Mall", "$666", "#FFFF00", 280, 8, 24, 120, 360, 
 square[30] = new Square("Go to Magic City", "Go directly to Magic City. Do not pass GO. Do not collect $333.", "#FFFFFF");
 square[31] = new Square("Cumberland Boulevard", "$333", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
 square[32] = new Square("Roswell Road", "$333", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
-square[33] = new Square("Tribe Chest", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
+square[33] = new Square("Mining Pool", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[34] = new Square("Northside Parkway", "$777", "#008000", 320, 9, 28, 150, 450, 1000, 1200, 1400);
 square[35] = new Square("MARTA Bus", "$333", "#FFFFFF", 200, 1);
 square[36] = new Square("Chance", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
@@ -115,18 +115,18 @@ var communityChestCards = [];
 var chanceCards = [];
 
 communityChestCards[0] = new Card("Get out of Magic City, Free. This card may be kept until needed or sold.", function(p) { p.communityChestJailCard = true; updateOwned();});
-communityChestCards[1] = new Card("You have won second prize in a beauty contest. Collect $777.", function() { addamount(10, 'Tribe Chest');});
-communityChestCards[2] = new Card("From sale of stock, you get $777.", function() { addamount(50, 'Tribe Chest');});
-communityChestCards[3] = new Card("Life insurance matures. Collect $222.", function() { addamount(100, 'Tribe Chest');});
-communityChestCards[4] = new Card("Income tax refund. Collect $3333.", function() { addamount(20, 'Tribe Chest');});
-communityChestCards[5] = new Card("Holiday fund matures. Receive $777.", function() { addamount(100, 'Tribe Chest');});
-communityChestCards[6] = new Card("You inherit $1111.", function() { addamount(100, 'Tribe Chest');});
-communityChestCards[7] = new Card("Receive $333 consultancy fee.", function() { addamount(25, 'Tribe Chest');});
-communityChestCards[8] = new Card("Pay hospital fees of $100.", function() { subtractamount(100, 'Tribe Chest');});
-communityChestCards[9] = new Card("Bank error in your favor. Collect $222.", function() { addamount(200, 'Tribe Chest');});
-communityChestCards[10] = new Card("Pay school fees of $555.", function() { subtractamount(50, 'Tribe Chest');});
-communityChestCards[11] = new Card("Doctor's fee. Pay $555.", function() { subtractamount(50, 'Tribe Chest');});
-communityChestCards[12] = new Card("It is your birthday. Collect $333 from every player.", function() { collectfromeachplayer(10, 'Tribe Chest');});
+communityChestCards[1] = new Card("You have won second prize in a beauty contest. Collect $777.", function() { addamount(10, 'Mining Pool');});
+communityChestCards[2] = new Card("From sale of stock, you get $777.", function() { addamount(50, 'Mining Pool');});
+communityChestCards[3] = new Card("Life insurance matures. Collect $222.", function() { addamount(100, 'Mining Pool');});
+communityChestCards[4] = new Card("Income tax refund. Collect $3333.", function() { addamount(20, 'Mining Pool');});
+communityChestCards[5] = new Card("Holiday fund matures. Receive $777.", function() { addamount(100, 'Mining Pool');});
+communityChestCards[6] = new Card("You inherit $1111.", function() { addamount(100, 'Mining Pool');});
+communityChestCards[7] = new Card("Receive $333 consultancy fee.", function() { addamount(25, 'Mining Pool');});
+communityChestCards[8] = new Card("Pay hospital fees of $100.", function() { subtractamount(100, 'Mining Pool');});
+communityChestCards[9] = new Card("Bank error in your favor. Collect $222.", function() { addamount(200, 'Mining Pool');});
+communityChestCards[10] = new Card("Pay school fees of $555.", function() { subtractamount(50, 'Mining Pool');});
+communityChestCards[11] = new Card("Doctor's fee. Pay $555.", function() { subtractamount(50, 'Mining Pool');});
+communityChestCards[12] = new Card("It is your birthday. Collect $333 from every player.", function() { collectfromeachplayer(10, 'Mining Pool');});
 communityChestCards[13] = new Card("Advance to \"GO\" (Collect $200).", function() { advance(0);});
 communityChestCards[14] = new Card("You are assessed for street repairs. $444 per house. $333 per hotel.", function() { streetrepairs(40, 115);});
 communityChestCards[15] = new Card("Go to Magic City. Go directly to Magic City. Do not pass \"GO\". Do not collect $333.", function() { gotojail();});
